@@ -5,7 +5,7 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const helmet = require('helmet');
 const morgan = require('morgan');
-const PORT = 6080;
+const PORT = 7080;
 const v1Router = require('./routers/api.v1')
 const {VPSDataHelper} = require('./helpers/VPSDataHelper')
 
