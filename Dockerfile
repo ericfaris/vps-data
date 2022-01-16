@@ -15,6 +15,6 @@ COPY ./src .
 ARG VPS_DATA_URI
 ENV VPS_DATA_URI $VPS_DATA_URI
 
-EXPOSE 7080
+EXPOSE 5080
 
 CMD [ "node", "index.js" ]
