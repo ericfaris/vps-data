@@ -1,0 +1,20 @@
+{    
+  "name": "score-bot",
+  "version": "1.0.0",
+  "description": "VPS Data",
+  "main": "index.js",
+  "scripts": {
+      "start": "node index.js",
+      "test": "npx ava"
+  },
+  "author": "Eric Faris",
+  "dependencies": {
+    "body-parser": "^1.19.1",
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.2",
+    "helmet": "^5.0.1",
+    "morgan": "^1.10.0",
+    "node-fetch": "^2.6.6"
+  }
+}
