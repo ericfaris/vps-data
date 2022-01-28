@@ -33,5 +33,5 @@ app.use('/api/v1', async function (req, res, next) {
 
 // starting the server
 app.listen(PORT, async () => {
-  console.log(`listening on port ${PORT}`);
+  console.log(`listening on port ${PORT} `);
 });
