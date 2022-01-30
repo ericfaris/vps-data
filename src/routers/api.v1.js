@@ -9,17 +9,19 @@ router.get('/', async (req, res) => {
 router.get('/tables', async (req, res) => {
     const vpsData = req.vpsData;
     let tables = vpsData;
+    let id = null;
     let name = null;
-    let author = null;
-    let version = null;
 
     if (!(req.query && Object.keys(req.query).length === 0 && Object.getPrototypeOf(req.query) === Object.prototype)) {
+        id = req.query?.id;
         name = req.query?.name;
-        author = req.query?.author;
-        version = req.query?.version;
 
-        const regex = new RegExp(`.*${name.toLowerCase()}.*`, 'i');
-        tables = tables.filter(t => t.name.toLowerCase().match(regex));
+        if (id) {
+            tables = tables.filter(t => t.id === id);
+        } else if (name) {
+            const regex = new RegExp(`.*${name.toLowerCase()}.*`, 'i');
+            tables = tables.filter(t => t.name.toLowerCase().match(regex));
+        }
     }
 
     res.send(tables);
