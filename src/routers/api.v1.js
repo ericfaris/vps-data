@@ -3,7 +3,7 @@ const express = require('express');
 const router = express.Router();
 
 router.get('/', async (req, res) => {
-    res.send('up and running');
+    res.send('VPS Data Service is up and running...');
 });
 
 router.get('/tables', async (req, res) => {
