@@ -2,7 +2,8 @@ require('dotenv').config()
 const express = require('express');
 const router = express.Router();
 
-router.get('/', async (req, res) => {
+router.get('/', (req, res) => {
+    console.log(`in default`);
     res.send('VPS Data Service is up and running...');
 });
 
