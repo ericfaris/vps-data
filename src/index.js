@@ -24,12 +24,14 @@ app.use(cors());
 // adding morgan to log HTTP requests
 app.use(morgan('combined'));
 
-app.use('/api/v1', async function (req, res, next) {
-  let vpsDataHelper = new VPSDataHelper();
-  const json = await vpsDataHelper.getJson(); 
-  req.vpsData = json;
-  next();
-}, v1Router);
+// app.use('/api/v1', async function (req, res, next) {
+//   let vpsDataHelper = new VPSDataHelper();
+//   const json = await vpsDataHelper.getJson(); 
+//   req.vpsData = json;
+//   next();
+// }, v1Router);
+
+app.use('/api/v1', v1Router);
 
 // starting the server
 app.listen(PORT, () => {
