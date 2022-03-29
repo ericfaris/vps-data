@@ -27,7 +27,13 @@ router.get('/games/tables/:vpsId', async (req, res) => {
     const vpsId = req.params.vpsId;
 
     games = games.filter(g => g.tableFiles?.some(t => t?.id === vpsId));
-    res.send(games);
+
+    if (games.length === 1 ) {
+        games[0].table = games[0].tableFiles?.find(t => t.id === vpsId);
+        delete games[0].tableFiles;
+    }
+
+    res.send(games.length === 0 ? {} : games[0]);
 });
 
 
