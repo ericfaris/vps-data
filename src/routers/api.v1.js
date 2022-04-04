@@ -3,7 +3,6 @@ const express = require('express');
 const router = express.Router();
 
 router.get('/', (req, res) => {
-    console.log(`in default`);
     res.send('VPS Data Service is up and running...');
 });
 
@@ -33,7 +32,7 @@ router.get('/games/tables/:vpsId', async (req, res) => {
         delete games[0].tableFiles;
     }
 
-    res.send(games.length === 0 ? null : games[0]);
+    res.send(games.length === 0 ? {} : games[0]);
 });
 
 
