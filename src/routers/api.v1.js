@@ -33,7 +33,7 @@ router.get('/games/tables/:vpsId', async (req, res) => {
         delete games[0].tableFiles;
     }
 
-    res.send(games.length === 0 ? {} : games[0]);
+    res.send(games.length === 0 ? null : games[0]);
 });
 
 
